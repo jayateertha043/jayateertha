@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/jayateertha/static/css/main.16815ac1.chunk.css",
+    "main.js": "/jayateertha/static/js/main.070cfeb1.chunk.js",
+    "main.js.map": "/jayateertha/static/js/main.070cfeb1.chunk.js.map",
+    "runtime-main.js": "/jayateertha/static/js/runtime-main.e4fa3c55.js",
+    "runtime-main.js.map": "/jayateertha/static/js/runtime-main.e4fa3c55.js.map",
+    "static/js/2.2694d5d9.chunk.js": "/jayateertha/static/js/2.2694d5d9.chunk.js",
+    "static/js/2.2694d5d9.chunk.js.map": "/jayateertha/static/js/2.2694d5d9.chunk.js.map",
+    "static/js/3.a30c484a.chunk.js": "/jayateertha/static/js/3.a30c484a.chunk.js",
+    "static/js/3.a30c484a.chunk.js.map": "/jayateertha/static/js/3.a30c484a.chunk.js.map",
+    "index.html": "/jayateertha/index.html",
+    "static/css/main.16815ac1.chunk.css.map": "/jayateertha/static/css/main.16815ac1.chunk.css.map",
+    "static/js/2.2694d5d9.chunk.js.LICENSE.txt": "/jayateertha/static/js/2.2694d5d9.chunk.js.LICENSE.txt",
+    "static/media/avatar.1d0271cc.jpg": "/jayateertha/static/media/avatar.1d0271cc.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e4fa3c55.js",
+    "static/js/2.2694d5d9.chunk.js",
+    "static/css/main.16815ac1.chunk.css",
+    "static/js/main.070cfeb1.chunk.js"
+  ]
+}
