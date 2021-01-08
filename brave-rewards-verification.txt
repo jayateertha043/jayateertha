@@ -1,0 +1,8 @@
+---
+layout: none
+permalink: .well-known/brave-payments-verification.txt
+---
+This is a Brave Rewards publisher verification file.
+
+Domain: jayateerthag.in
+Token: a743bd1eb9e3a3f068afff75116ee94f1d6474e1293611da9495d7a02a5347a0

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>URL SHORTNER</title></head>
+<body class="bg-secondary">
+<div class="container-fluid text-center">
+<nav class="navbar navbar-dark bg-dark  justify-content-center">
+<ul class="nav">
+<li class="nav-item">
+<a class="nav-link" href="shrt.html">HOME</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">ABOUT ME</a>
+</li>
+</ul>
+</nav>
+<div class="container" style="margin-top:5%;">
+<div class="jumbotron bg-warning">
+  <div class="container">
+    <h1>AMAZING URL SHORTNER</h1>
+    <p>Enter The URL to Shorten</p>
+	<div class="input-group mb-3">
+  <input type="text" id="user-url" class="form-control" placeholder="Enter URL">
+  <button type="button" class="btn btn-success" onclick="api();">GO</button>
+</div>
+<p id="sl1"></p>
+<p id="sl2"></p>
+  </div>
+</div>
+</div>
+</div>
+
+
+<script>
+var response;
+
+function api(){
+var url = "https://api.shrtco.de/v2/shorten?url=" + document.getElementById("user-url").value;
+console.log(url);
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 201) {
+	   response = xhttp.response;
+	   console.log(response.result);
+	   document.getElementById("sl1").innerHTML = '<a href="'+ response.result.full_short_link + '">' + response.result.short_link + '</a>';
+	   document.getElementById("sl2").innerHTML = '<a href="'+ response.result.full_short_link2 + '">' + response.result.short_link2 + '</a>';
+	   
+    }
+};
+xhttp.responseType='json';
+xhttp.open("GET",url, true);
+xhttp.send();
+}
+
+</script>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+

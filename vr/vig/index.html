@@ -1,0 +1,58 @@
+             <html>
+             <head><title></title>
+             <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+             <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+             <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script> 
+             <!--  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>-->
+             </head>
+             <body>
+                <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" fog="color:#b0af83;far:84;density:0"><canvas class="a-canvas" data-aframe-canvas="true" width="300" height="150"></canvas>
+                    <a-assets>
+                        <img src="assets/1.jpg" crossorigin="anonymous" id="1">
+                        <img src="assets/2.jpg" crossorigin="anonymous" id="2">
+                        <img src="assets/3.jpg" crossorigin="anonymous" id="3">
+                        <img src="assets/4.jpg" crossorigin="anonymous" id="4">
+                        <img src="assets/5.jpg" crossorigin="anonymous" id="5">
+                        <img src="assets/6.jpg" crossorigin="anonymous" id="6">
+                        <img src="assets/7.jpg" crossorigin="anonymous" id="7">
+                        <img src="assets/8.jpg" crossorigin="anonymous" id="8">
+                        <img src="assets/9.gif" crossorigin="anonymous" id="9">
+                    </a-assets>        
+
+            <a-entity environment="preset:starry;fog:0.9;seed:100;groundTexture:walkernoise;ground:hills;grid:none;dressing:trees;dressingAmount:50;"  visible=""><a-entity class="environment" position="0 50 0" light="type:hemisphere;color:#91dacf;intensity:0.6;groundColor:#937a24" visible=""></a-entity><a-entity class="environment" position="-1.2 0.88 -0.55" light="intensity:0.6;shadowCameraLeft:-10;shadowCameraBottom:-10;shadowCameraRight:10;shadowCameraTop:10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 4.18" shadow="cast:false;receive:false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader:gradientshader;topColor:#24b59f;bottomColor:#eff9b7" visible="" geometry=""></a-sky></a-entity>
+            <a-camera position="-1.292 1.6 19.709773965199915" rotation="19.70974815250032 -29.450030669724313 0" camera="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="">
+                <a-cursor color="blue" fuse="true" fuse-timeout="1000" material="" raycaster="" cursor="" geometry=""></a-cursor>
+            </a-camera>
+            <a-entity position="26.86287 26.92286 -20.74836" scale="20 20 1" rotation="0 270 0">
+                <a-text font="	https://cdn.aframe.io/fonts/SourceCodePro.fnt" color="red" side="double" value="Welcome to Thrivikram's" text="font:https://cdn.aframe.io/fonts/SourceCodePro.fnt">
+                </a-text>
+                <a-text font="	https://cdn.aframe.io/fonts/SourceCodePro.fnt" color="yellow" side="double" value="first VR Website" text="font:https://cdn.aframe.io/fonts/SourceCodePro.fnt" position="0.73957 -0.36229 0">
+                </a-text>
+                <a-animation attribute="rotation" dur="5000" direction="alternate" to="180 180 180" repeat="indefinite"></a-animation>
+            </a-entity>
+            
+            <a-entity id="pic" position="0 3 0" scale="5 5 1">
+                <a-light light="type:spot;distance:30" position="0 0 3.25239"></a-light>
+                <a-plane src="#1" side="double" material="" geometry="">            
+                </a-plane>
+                <a-text position="-0.76863 0.68343 0" value="THRIVIKRAM G" side="double" text=""></a-text>
+                <a-animation dur="4000" attribute="position" easing="linear" to="0 3 10" begin="mouseenter"></a-animation>
+                <a-animation dur="4000" attribute="position" from="0 3 10" easing="linear" to="0 3 0" begin="mouseleave"></a-animation>
+            </a-entity>
+
+            <a-entity id="gallery-1" position="-8.06705 9.8017 13.20769">
+                <a-curvedimage theta-length="25" height="2" scale="5 5 5" src="#1" rotation="0 -115.20691569813516 0" geometry="thetaLength:80" position="-0.49464 0 12.34559" material=""></a-curvedimage>
+                <a-curvedimage theta-length="25" height="2" scale="5 5 5" src="#9" rotation="0 -115.20691569813516 0" geometry="thetaLength:80" position="-0.49464 11.61435 12.34559" material=""></a-curvedimage> 
+                <a-curvedimage theta-length="50" scale="5 5 5" height="2" src="#3" rotation="0 -115.20691569813516 0" geometry="thetaLength:80;thetaStart:-20" position="-2.24201 0 -2.31132" material=""></a-curvedimage>
+                <a-curvedimage theta-length="50" scale="5 5 5" height="2" src="#4" rotation="0 -115.20691569813516 0" geometry="thetaLength:80;thetaStart:-20" position="-2.24201 11.40009 -2.31132" material=""></a-curvedimage> 
+            </a-entity>
+            <a-entity id="gallery-2" rotation="0 90 0" position="0.40355 10 28.75514">
+                <a-curvedimage theta-length="25" height="2" scale="5 5 5" src="#5" rotation="0 -115.20691569813516 0" geometry="thetaLength:80" position="-0.49464 0 12.34559" material=""></a-curvedimage>
+                <a-curvedimage theta-length="25" height="2" scale="5 5 5" src="#6" rotation="0 -115.20691569813516 0" geometry="thetaLength:80" position="-0.49464 11.61435 12.34559" material=""></a-curvedimage> 
+                <a-curvedimage theta-length="50" scale="5 5 5" height="2" src="#7" rotation="0 -115.20691569813516 0" geometry="thetaLength:80;thetaStart:-20" position="-2.24201 0 -2.31132" material=""></a-curvedimage>
+                <a-curvedimage theta-length="50" scale="5 5 5" height="2" src="#8" rotation="0 -115.20691569813516 0" geometry="thetaLength:80;thetaStart:-20" position="-2.24201 11.40009 -2.31132" material=""></a-curvedimage> 
+            </a-entity>
+  
+        </a-scene>
+        </body>
+</html>

