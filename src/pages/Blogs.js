@@ -11,6 +11,19 @@ const Blogs = () => {
         <Grid container justify="center" spacing={1}>
 
         <Grid item>
+          <a href={"https://jayateerthag.medium.com/grafana-admin-panel-bypass-in-google-acquisition-virustotal-c5ecc9d7b8ae"}>
+          <Card>
+            <Box mb={5} style={{width:"350px",height:'100px'}}>
+            <CardContent>
+              <Typography variant="h6">Grafana Admin Panel bypass in Google Acquisition(VirusTotal)</Typography>
+              <p>This is a blog about grafana admin panel bypass that I found in a Google acquisition and rewarded</p>
+            </CardContent>
+            </Box>
+          </Card>
+          </a>
+        </Grid>
+
+        <Grid item>
           <a href={"https://medium.com/@jayateerthag/google-referer-leak-bug-434f6293ce66"}>
           <Card>
             <Box mb={5} style={{width:"350px",height:'100px'}}>
