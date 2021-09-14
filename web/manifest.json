@@ -1,0 +1,14 @@
+{
+    "name": "Jayateertha Guruprasad",
+    "short_name": "Jayateertha G",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "Jayateertha Guruprasad is a Computer Science Engineer passionate about learning latest tech,developing applications &amp; BugBounties!!!",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+
+    ]
+}
