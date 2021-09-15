@@ -8,11 +8,11 @@ import 'package:jayateertha/pages/portfolio.dart';
 import 'package:jayateertha/widgets/custom_drawer.dart';
 
 import 'package:velocity_x/velocity_x.dart';
-import 'package:url_strategy/url_strategy.dart';
+//import 'package:url_strategy/url_strategy.dart';
 //import 'dart:html';
 
 void main() {
-  setPathUrlStrategy();
+  //setPathUrlStrategy();
   runApp(const MyApp());
 }
 
