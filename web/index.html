@@ -34,7 +34,16 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-       
+  <script type="text/javascript">
+    let useHtml = false;// ...
+    if(useHtml) {
+      window.flutterWebRenderer = "html";
+    } else {
+      window.flutterWebRenderer = "canvaskit";
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+    
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;

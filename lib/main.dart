@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jayateertha/pages/blogs.dart';
 import 'package:jayateertha/pages/portfolio.dart';
 //import 'package:jayateertha/utils/api.dart';
@@ -28,7 +29,7 @@ const colorizeColors = [
 const colorizeTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 50.0,
-  fontFamily: 'Horizon',
+  fontFamily: '',
 );
 
 class MyApp extends StatelessWidget {
@@ -41,7 +42,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Jayateertha G',
       themeMode: ThemeMode.dark,
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+          brightness: Brightness.dark,
+          textTheme: GoogleFonts.latoTextTheme(
+            ThemeData(brightness: Brightness.dark).textTheme,
+          )),
       initialRoute: '/',
       routes: {
         '/': (context) => const MyHomePage(),
@@ -81,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 .make()
                 .wh20(context)
                 .centered(),
-            'Hi! 👋'.richText.bold.xl2.makeCentered(),
+            welcome.richText.bold.xl2.makeCentered(),
             const SizedBox(
               height: 10,
             ),
@@ -103,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       textStyle: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: context.isMobile ? 35 : 50,
-                        fontFamily: 'Horizon',
+                        fontFamily: '',
                       ),
                       colors: colorizeColors,
                     ),
@@ -125,15 +130,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: context.isMobile ? 25 : 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  fontFamily: 'Horizon',
+                  fontFamily: '',
                 ),
                 child: AnimatedTextKit(
                   isRepeatingAnimation: true,
                   repeatForever: true,
                   animatedTexts: [
-                    RotateAnimatedText('Security Researcher 😎'),
-                    RotateAnimatedText('Developer 💻'),
-                    RotateAnimatedText('Hacker 👨‍💻'),
+                    RotateAnimatedText(Anim_Text_1),
+                    RotateAnimatedText(Anim_Text_2),
+                    RotateAnimatedText(Anim_Text_3),
                   ],
                 ),
               ),
@@ -146,3 +151,10 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+//
+
+const String Anim_Text_1 = '''Security Researcher 😎''';
+const String Anim_Text_2 = '''Developer 💻''';
+const String Anim_Text_3 = '''Hacker 👨‍💻''';
+const String welcome = '''Hi! 👋''';

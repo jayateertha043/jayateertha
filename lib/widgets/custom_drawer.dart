@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 dynamic showCustomDrawer(BuildContext context) {
   return showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
+      shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30), topRight: Radius.circular(30))),
       context: context,
