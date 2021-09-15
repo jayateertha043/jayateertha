@@ -139,6 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     RotateAnimatedText(Anim_Text_1),
                     RotateAnimatedText(Anim_Text_2),
                     RotateAnimatedText(Anim_Text_3),
+                    RotateAnimatedText(Anim_Text_4),
                   ],
                 ),
               ),
@@ -157,4 +158,5 @@ class _MyHomePageState extends State<MyHomePage> {
 const String Anim_Text_1 = '''Security Researcher 😎''';
 const String Anim_Text_2 = '''Developer 💻''';
 const String Anim_Text_3 = '''Hacker 👨‍💻''';
+const String Anim_Text_4 = '''BugBounty Hunter 🤑''';
 const String welcome = '''Hi! 👋''';

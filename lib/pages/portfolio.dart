@@ -28,7 +28,7 @@ class _PortfolioState extends State<Portfolio> {
       getAchievementsFromFirebase().then((value) {
         this.setState(() {
           achievements.addAll(value);
-          print(achievements);
+          //print(achievements);
           showAchievements = true;
         });
       });
@@ -96,8 +96,8 @@ class _ProjectsState extends State<Projects> {
       if (data[i]["description"] == null) {
         data[i]["description"] = "No description available";
       }
-      print(i.toString() + " " + data[i]["name"]);
-      print(data[i]["description"]);
+      //  print(i.toString() + " " + data[i]["name"]);
+      //print(data[i]["description"]);
     }
     return this.widget.projects.length > 0
         ? SizedBox(
@@ -129,7 +129,7 @@ class _ProjectsState extends State<Projects> {
                     String title = "";
                     String description = "";
                     if (data[index] == null) {
-                      print("[*] NULL");
+                      //     print("[*] NULL");
                     }
                     title = data[index]["name"].toString() != null
                         ? data[index]["name"].toString()
@@ -210,14 +210,14 @@ class _AchievementsState extends State<Achievements> {
   Widget build(BuildContext context) {
     var data = this.widget.achievements;
     int length = data.length;
-    print("Printing Achievements");
+    //print("Printing Achievements");
     for (int i = 0; i < length; i++) {
       // data[i]["description"] = data[6]["description"];
       if (data[i]["description"] == null) {
         data[i]["description"] = "No description available";
       }
-      print(i.toString() + " " + data[i]["name"]);
-      print(data[i]["description"]);
+      //print(i.toString() + " " + data[i]["name"]);
+      // print(data[i]["description"]);
     }
     return this.widget.achievements.length > 0
         ? SizedBox(
@@ -248,7 +248,7 @@ class _AchievementsState extends State<Achievements> {
                     String title = "";
                     String description = "";
                     if (data[index] == null) {
-                      print("[*] NULL");
+                      // print("[*] NULL");
                     }
                     title = data[index]["name"].toString() != null
                         ? data[index]["name"].toString()

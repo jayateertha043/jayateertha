@@ -99,7 +99,7 @@ dynamic showCustomDrawer(BuildContext context) {
                             ":" +
                             Uri.base.port.toString();
                         uri = uri + "/assets/JayateerthaResume.pdf";
-                        print(uri);
+                        // print(uri);
                         launch_url_newtab(uri);
                       },
                     ),
@@ -119,7 +119,7 @@ dynamic showCustomDrawer(BuildContext context) {
                     child: HStack(
                       [
                         Container(
-                          width: context.percentWidth * 1,
+                          width: context.percentWidth * 5,
                         ),
                         InkWell(
                           hoverColor: Colors.green,
@@ -131,7 +131,7 @@ dynamic showCustomDrawer(BuildContext context) {
                           },
                         ),
                         Container(
-                          width: context.percentWidth * 1,
+                          width: context.percentWidth * 5,
                         ),
                         InkWell(
                           hoverColor: Colors.green,
@@ -142,7 +142,7 @@ dynamic showCustomDrawer(BuildContext context) {
                           },
                         ),
                         Container(
-                          width: context.percentWidth * 1,
+                          width: context.percentWidth * 5,
                         ),
                         InkWell(
                           hoverColor: Colors.green,
@@ -153,7 +153,7 @@ dynamic showCustomDrawer(BuildContext context) {
                           },
                         ),
                         Container(
-                          width: context.percentWidth * 1,
+                          width: context.percentWidth * 5,
                         ),
                         InkWell(
                           hoverColor: Colors.green,
@@ -164,7 +164,7 @@ dynamic showCustomDrawer(BuildContext context) {
                           },
                         ),
                         Container(
-                          width: context.percentWidth * 1,
+                          width: context.percentWidth * 5,
                         ),
                         InkWell(
                           hoverColor: Colors.green,
@@ -175,7 +175,7 @@ dynamic showCustomDrawer(BuildContext context) {
                           },
                         ),
                         Container(
-                          width: context.percentWidth * 1,
+                          width: context.percentWidth * 5,
                         ),
                       ],
                       alignment: MainAxisAlignment.spaceEvenly,

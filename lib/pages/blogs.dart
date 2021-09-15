@@ -93,7 +93,7 @@ class _MediumBlogsState extends State<MediumBlogs> {
                       String title = "";
                       String description = "";
                       if (data[index] == null) {
-                        print("[*] NULL");
+                        //print("[*] NULL");
                       }
                       title = data[index]["title"].toString() != null
                           ? data[index]["name"].toString()
