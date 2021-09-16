@@ -64,7 +64,8 @@ class MediumBlogs extends StatefulWidget {
 }
 
 class _MediumBlogsState extends State<MediumBlogs> {
-  final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController =
+      ScrollController(initialScrollOffset: 0);
   @override
   Widget build(BuildContext context) {
     List<dynamic> data = widget.medium_blogs;

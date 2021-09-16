@@ -16,7 +16,7 @@ class _PortfolioState extends State<Portfolio> {
   List<dynamic> projects = new List.generate(0, (index) => null);
   List<dynamic> achievements = new List.generate(0, (index) => null);
 
-  final ScrollController _controller = new ScrollController();
+  //final ScrollController _controller = new ScrollController();
   @override
   void initState() {
     // TODO: implement initState
@@ -25,9 +25,19 @@ class _PortfolioState extends State<Portfolio> {
         projects.addAll(value);
         showProjects = true;
       });
+      getProjectsFromFirebase().then((value) {
+        this.setState(() {
+          projects.addAll(value);
+          showProjects = true;
+        });
+      });
+      this.setState(() {
+        projects.shuffle();
+      });
       getAchievementsFromFirebase().then((value) {
         this.setState(() {
           achievements.addAll(value);
+          projects.shuffle();
           //print(achievements);
           showAchievements = true;
         });
@@ -85,7 +95,8 @@ class Projects extends StatefulWidget {
 }
 
 class _ProjectsState extends State<Projects> {
-  final ScrollController _scrollController = new ScrollController();
+  final ScrollController _scrollController =
+      new ScrollController(initialScrollOffset: 0);
   _ProjectsState();
   @override
   Widget build(BuildContext context) {
@@ -163,7 +174,7 @@ class _ProjectsState extends State<Projects> {
                                           .uppercase
                                           .underline
                                           .bold
-                                          .xl
+                                          .medium
                                           .makeCentered(),
                                       Divider(),
                                       Text(description).px8(),
@@ -205,7 +216,8 @@ class Achievements extends StatefulWidget {
 }
 
 class _AchievementsState extends State<Achievements> {
-  final ScrollController _scrollController = new ScrollController();
+  final ScrollController _scrollController =
+      new ScrollController(initialScrollOffset: 0);
   @override
   Widget build(BuildContext context) {
     var data = this.widget.achievements;
@@ -223,71 +235,66 @@ class _AchievementsState extends State<Achievements> {
         ? SizedBox(
             height: context.percentHeight * 35.5,
             width: context.percentWidth * 70,
-            child: Scrollbar(
-              //scrollbarOrientation: ScrollbarOrientation.bottom,
-              isAlwaysShown: true,
-              controller: _scrollController,
-              child: VxSwiper.builder(
-                  // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  //   maxCrossAxisExtent: 200,
-                  // childAspectRatio: (4 / 3) * 1,
-                  //crossAxisSpacing: 20,
-                  //mainAxisSpacing: 20),
-                  itemCount: length,
-                  // scrollDirection: Axis.horizontal,
-                  // controller: _scrollController,
-                  //shrinkWrap: true,
-                  autoPlay: true,
-                  viewportFraction: 0.8,
-                  aspectRatio: (3 / 2),
-                  enableInfiniteScroll: true,
-                  enlargeCenterPage: true,
-                  pauseAutoPlayOnTouch: Duration(seconds: 5),
-                  autoPlayCurve: Curves.fastLinearToSlowEaseIn,
-                  itemBuilder: (context, index) {
-                    String title = "";
-                    String description = "";
-                    if (data[index] == null) {
-                      // print("[*] NULL");
-                    }
-                    title = data[index]["name"].toString() != null
-                        ? data[index]["name"].toString()
-                        : "";
-                    description = data[index]["description"] != null
-                        ? data[index]["description"].toString()
-                        : "";
-                    return data[index] != null
-                        ? Material(
-                            child: InkWell(
-                              onTap: () {
-                                if (data[index]["html_url"].toString() !=
-                                        null ||
-                                    data[index]["html_url"].toString() != "") {
-                                  launch_url_newtab(data[index]["html_url"]);
-                                }
-                                ;
-                              },
-                              hoverColor: Colors.green,
-                              child: Padding(
-                                padding: const EdgeInsets.all(3),
-                                child: Card(
-                                  color: null,
-                                  child: title
-                                      .toString()
-                                      .text
-                                      .uppercase
-                                      .underline
-                                      .bold
-                                      .maxFontSize(24)
-                                      .makeCentered()
-                                      .p4(),
-                                ),
+            child: VxSwiper.builder(
+                // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                //   maxCrossAxisExtent: 200,
+                // childAspectRatio: (4 / 3) * 1,
+                //crossAxisSpacing: 20,
+                //mainAxisSpacing: 20),
+                itemCount: length,
+                // scrollDirection: Axis.horizontal,
+                // controller: _scrollController,
+                //shrinkWrap: true,
+                autoPlayInterval: Duration(seconds: 2),
+                autoPlay: true,
+                viewportFraction: 0.8,
+                aspectRatio: (3 / 2),
+                enableInfiniteScroll: true,
+                enlargeCenterPage: true,
+                pauseAutoPlayOnTouch: Duration(seconds: 5),
+                autoPlayCurve: Curves.fastLinearToSlowEaseIn,
+                itemBuilder: (context, index) {
+                  String title = "";
+                  String description = "";
+                  if (data[index] == null) {
+                    // print("[*] NULL");
+                  }
+                  title = data[index]["name"].toString() != null
+                      ? data[index]["name"].toString()
+                      : "";
+                  description = data[index]["description"] != null
+                      ? data[index]["description"].toString()
+                      : "";
+                  return data[index] != null
+                      ? Material(
+                          child: InkWell(
+                            onTap: () {
+                              if (data[index]["html_url"].toString() != null ||
+                                  data[index]["html_url"].toString() != "") {
+                                launch_url_newtab(data[index]["html_url"]);
+                              }
+                              ;
+                            },
+                            hoverColor: Colors.green,
+                            child: Padding(
+                              padding: const EdgeInsets.all(3),
+                              child: Card(
+                                color: null,
+                                child: title
+                                    .toString()
+                                    .text
+                                    .uppercase
+                                    .underline
+                                    .bold
+                                    .maxFontSize(24)
+                                    .makeCentered()
+                                    .p4(),
                               ),
                             ),
-                          )
-                        : Container();
-                  }),
-            ),
+                          ),
+                        )
+                      : Container();
+                }),
           )
         : SizedBox(
             height: context.percentHeight * 35.5,
