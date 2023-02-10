@@ -44,7 +44,7 @@ class _BlogsState extends State<Blogs> {
             height: context.percentHeight * 0.95,
           ),
           'Blogs'.text.uppercase.bold.xl4.makeCentered(),
-          Divider(),
+          const Divider(),
           showMediumBlogs ? MediumBlogs(medium_blogs) : Container(),
         ],
         //alignment: MainAxisAlignment.center,

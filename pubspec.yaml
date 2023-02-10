@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   velocity_x: ^3.3.0
-  animated_text_kit: ^4.2.1
+  animated_text_kit: ^4.2.2
   url_launcher: ^6.0.10
   http: ^0.13.3
   font_awesome_flutter: ^9.1.0

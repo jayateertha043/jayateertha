@@ -1,5 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jayateertha/pages/blogs.dart';
@@ -27,10 +27,10 @@ const colorizeColors = [
   Colors.yellow
 ];
 const colorizeTextStyle = TextStyle(
-  fontWeight: FontWeight.bold,
-  fontSize: 50.0,
-  fontFamily: '',
-);
+    fontWeight: FontWeight.bold,
+    fontSize: 50.0,
+    fontFamily: '',
+    color: Colors.white);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -86,11 +86,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 .make()
                 .wh20(context)
                 .centered(),
-            welcome.richText.bold.xl2.makeCentered(),
+            welcome.richText.xl2.cyan400.bold.makeCentered(),
             const SizedBox(
               height: 10,
             ),
-            'I am'.text.xl2.makeCentered(),
+            'I am '
+                .text
+                .size(24)
+                .color(
+                  const Color.fromARGB(200, 255, 255, 255),
+                )
+                .bold
+                .makeCentered(),
             Container(
               height: 10,
             ),
@@ -98,21 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AnimatedTextKit(
-                  pause: const Duration(microseconds: 0),
-                  isRepeatingAnimation: true,
-                  repeatForever: true,
-                  animatedTexts: [
-                    ColorizeAnimatedText(
-                      'Jayateertha G',
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: context.isMobile ? 35 : 50,
-                        fontFamily: '',
-                      ),
-                      colors: colorizeColors,
-                    ),
-                  ],
+                Text(
+                  "Jayateertha G",
+                  style: TextStyle(
+                      fontSize: context.isMobile ? 35 : 50,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.greenAccent),
                 ),
                 const Text(
                   "  ,",
@@ -129,17 +127,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(
                   fontSize: context.isMobile ? 25 : 40,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: const Color.fromARGB(200, 255, 255, 255),
                   fontFamily: '',
                 ),
                 child: AnimatedTextKit(
                   isRepeatingAnimation: true,
                   repeatForever: true,
                   animatedTexts: [
+                    RotateAnimatedText(Anim_Text_4),
+                    RotateAnimatedText(Anim_Text_3),
                     RotateAnimatedText(Anim_Text_1),
                     RotateAnimatedText(Anim_Text_2),
-                    RotateAnimatedText(Anim_Text_3),
-                    RotateAnimatedText(Anim_Text_4),
                   ],
                 ),
               ),
