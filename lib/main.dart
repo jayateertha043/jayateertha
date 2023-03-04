@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 import 'package:flutter/material.dart';
-//import 'package:google_fonts/google_fonts.dart' as GF;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jayateertha/pages/blogs.dart';
 import 'package:jayateertha/pages/portfolio.dart';
 //import 'package:jayateertha/utils/api.dart';
@@ -43,10 +43,10 @@ class MyApp extends StatelessWidget {
       title: 'Jayateertha G',
       themeMode: ThemeMode.dark,
       theme: ThemeData(
-        brightness: Brightness.dark,
-        /*textTheme: GF.GoogleFonts.latoTextTheme(
-            ThemeData(brightness: Brightness.dark).textTheme,*/
-      ),
+          brightness: Brightness.dark,
+          textTheme: GoogleFonts.latoTextTheme(
+            ThemeData(brightness: Brightness.dark).textTheme,
+          )),
       initialRoute: '/',
       routes: {
         '/': (context) => const MyHomePage(),
