@@ -13,29 +13,29 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
   bool showProjects = false;
   bool showAchievements = false;
-  List<dynamic> projects = new List.generate(0, (index) => null);
-  List<dynamic> achievements = new List.generate(0, (index) => null);
+  List<dynamic> projects = List.generate(0, (index) => null);
+  List<dynamic> achievements = List.generate(0, (index) => null);
 
   //final ScrollController _controller = new ScrollController();
   @override
   void initState() {
     // TODO: implement initState
     getGithubProjects().then((value) {
-      this.setState(() {
+      setState(() {
         projects.addAll(value);
         showProjects = true;
       });
       getProjectsFromFirebase().then((value) {
-        this.setState(() {
+        setState(() {
           projects.addAll(value);
           showProjects = true;
         });
       });
-      this.setState(() {
+      setState(() {
         projects.shuffle();
       });
       getAchievementsFromFirebase().then((value) {
-        this.setState(() {
+        setState(() {
           achievements.addAll(value);
           projects.shuffle();
           //print(achievements);
@@ -65,15 +65,15 @@ class _PortfolioState extends State<Portfolio> {
             height: context.percentHeight * 0.95,
           ),
           'Achievements'.text.uppercase.bold.xl4.makeCentered(),
-          Divider(),
+          const Divider(),
           // showAchievements
           SizedBox(
               height: context.percentHeight * 35.5,
               child: Achievements(achievements)),
           //  : SizedBox(height: context.percentHeight * 35.5),
-          Divider(),
+          const Divider(),
           'Projects'.text.uppercase.bold.xl4.makeCentered(),
-          Divider(),
+          const Divider(),
           //showProjects
           SizedBox(
               height: context.percentHeight * 35.5, child: Projects(projects)),
@@ -96,11 +96,11 @@ class Projects extends StatefulWidget {
 
 class _ProjectsState extends State<Projects> {
   final ScrollController _scrollController =
-      new ScrollController(initialScrollOffset: 0);
+      ScrollController(initialScrollOffset: 0);
   _ProjectsState();
   @override
   Widget build(BuildContext context) {
-    var data = this.widget.projects;
+    var data = widget.projects;
     int length = data.length;
     for (int i = 0; i < length; i++) {
       // data[i]["description"] = data[6]["description"];
@@ -110,14 +110,14 @@ class _ProjectsState extends State<Projects> {
       //  print(i.toString() + " " + data[i]["name"]);
       //print(data[i]["description"]);
     }
-    return this.widget.projects.length > 0
+    return widget.projects.isNotEmpty
         ? SizedBox(
             width: context.isMobile
                 ? context.percentWidth * 100
                 : context.percentWidth * 70,
             child: Scrollbar(
               //scrollbarOrientation: ScrollbarOrientation.bottom,
-              isAlwaysShown: true,
+              thumbVisibility: true,
               controller: _scrollController,
               child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -142,9 +142,7 @@ class _ProjectsState extends State<Projects> {
                     if (data[index] == null) {
                       //     print("[*] NULL");
                     }
-                    title = data[index]["name"].toString() != null
-                        ? data[index]["name"].toString()
-                        : "";
+                    title = data[index]["name"].toString() ?? "";
                     description = data[index]["description"] != null
                         ? data[index]["description"].toString()
                         : "";
@@ -157,7 +155,6 @@ class _ProjectsState extends State<Projects> {
                                     data[index]["html_url"].toString() != "") {
                                   launch_url_newtab(data[index]["html_url"]);
                                 }
-                                ;
                               },
                               hoverColor: Colors.green,
                               child: Padding(
@@ -176,7 +173,7 @@ class _ProjectsState extends State<Projects> {
                                           .bold
                                           .medium
                                           .makeCentered(),
-                                      Divider(),
+                                      const Divider(),
                                       Text(description).px8(),
                                     ],
                                     crossAlignment: CrossAxisAlignment.center,
@@ -203,7 +200,6 @@ class _ProjectsState extends State<Projects> {
               child: "Loading...".text.blue100.makeCentered(),
             ),
           );
-    ;
   }
 }
 
@@ -217,10 +213,10 @@ class Achievements extends StatefulWidget {
 
 class _AchievementsState extends State<Achievements> {
   final ScrollController _scrollController =
-      new ScrollController(initialScrollOffset: 0);
+      ScrollController(initialScrollOffset: 0);
   @override
   Widget build(BuildContext context) {
-    var data = this.widget.achievements;
+    var data = widget.achievements;
     int length = data.length;
     //print("Printing Achievements");
     for (int i = 0; i < length; i++) {
@@ -231,7 +227,7 @@ class _AchievementsState extends State<Achievements> {
       //print(i.toString() + " " + data[i]["name"]);
       // print(data[i]["description"]);
     }
-    return this.widget.achievements.length > 0
+    return widget.achievements.isNotEmpty
         ? SizedBox(
             height: context.percentHeight * 35.5,
             width: context.percentWidth * 70,
@@ -245,13 +241,13 @@ class _AchievementsState extends State<Achievements> {
                 // scrollDirection: Axis.horizontal,
                 // controller: _scrollController,
                 //shrinkWrap: true,
-                autoPlayInterval: Duration(seconds: 2),
+                autoPlayInterval: const Duration(seconds: 2),
                 autoPlay: true,
                 viewportFraction: 0.8,
                 aspectRatio: (3 / 2),
                 enableInfiniteScroll: true,
                 enlargeCenterPage: true,
-                pauseAutoPlayOnTouch: Duration(seconds: 5),
+                pauseAutoPlayOnTouch: const Duration(seconds: 5),
                 autoPlayCurve: Curves.fastLinearToSlowEaseIn,
                 itemBuilder: (context, index) {
                   String title = "";
@@ -259,9 +255,7 @@ class _AchievementsState extends State<Achievements> {
                   if (data[index] == null) {
                     // print("[*] NULL");
                   }
-                  title = data[index]["name"].toString() != null
-                      ? data[index]["name"].toString()
-                      : "";
+                  title = data[index]["name"].toString() ?? "";
                   description = data[index]["description"] != null
                       ? data[index]["description"].toString()
                       : "";
@@ -273,7 +267,6 @@ class _AchievementsState extends State<Achievements> {
                                   data[index]["html_url"].toString() != "") {
                                 launch_url_newtab(data[index]["html_url"]);
                               }
-                              ;
                             },
                             hoverColor: Colors.green,
                             child: Padding(

@@ -81,9 +81,9 @@ class _MediumBlogsState extends State<MediumBlogs> {
         ? Expanded(
             child: Scrollbar(
               controller: _scrollController,
-              isAlwaysShown: true,
+              thumbVisibility: true,
               child: Container(
-                margin: EdgeInsets.all(30),
+                margin: const EdgeInsets.all(30),
                 width: context.percentWidth * 70,
                 child: ListView.builder(
                     controller: _scrollController,
@@ -120,7 +120,7 @@ class _MediumBlogsState extends State<MediumBlogs> {
                                     child: Container(
                                       // elevation: 20,
                                       //color: null,
-                                      padding: EdgeInsets.all(20),
+                                      padding: const EdgeInsets.all(20),
                                       child: data[index]["title"]
                                           .toString()
                                           .text

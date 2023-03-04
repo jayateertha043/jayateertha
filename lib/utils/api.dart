@@ -8,7 +8,7 @@ Future<List<dynamic>> getGithubProjects() async {
       'https://api.github.com/users/jayateertha043/repos?sort=created';
   Uri uri = Uri.parse(api_url);
   final res = await http.get(uri);
-  var body = Utf8Decoder().convert(res.bodyBytes);
+  var body = const Utf8Decoder().convert(res.bodyBytes);
   var data = json.decode(body);
   List<dynamic> filtered = [];
   if (res.statusCode == 200) {
@@ -30,7 +30,7 @@ Future<dynamic> getMediumBlogs() async {
   dynamic filtered = [];
   final res = await http.get(uri);
   if (res.statusCode == 200) {
-    var body = Utf8Decoder().convert(res.bodyBytes);
+    var body = const Utf8Decoder().convert(res.bodyBytes);
     var data = json.decode(body);
     filtered = data["items"];
   }
@@ -45,7 +45,7 @@ Future<dynamic> getProjectsFromFirebase() async {
   dynamic filtered = [];
   final res = await http.get(uri);
   if (res.statusCode == 200) {
-    var body = Utf8Decoder().convert(res.bodyBytes);
+    var body = const Utf8Decoder().convert(res.bodyBytes);
     var data = json.decode(body);
     filtered = data["projects"];
   }
@@ -60,7 +60,7 @@ Future<dynamic> getAchievementsFromFirebase() async {
   dynamic filtered = [];
   final res = await http.get(uri);
   if (res.statusCode == 200) {
-    var body = Utf8Decoder().convert(res.bodyBytes);
+    var body = const Utf8Decoder().convert(res.bodyBytes);
     var data = json.decode(body);
     filtered = data["achievements"];
   }

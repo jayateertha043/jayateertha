@@ -108,7 +108,7 @@ dynamic showCustomDrawer(BuildContext context) {
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   color: Colors.green,
                   // padding: EdgeInsets.all(5),
@@ -123,7 +123,7 @@ dynamic showCustomDrawer(BuildContext context) {
                         ),
                         InkWell(
                           hoverColor: Colors.green,
-                          child: Icon(FontAwesomeIcons.facebook),
+                          child: const Icon(FontAwesomeIcons.facebook),
                           onTap: () {
                             const uri =
                                 'https://www.facebook.com/jayateertha043';
@@ -135,7 +135,7 @@ dynamic showCustomDrawer(BuildContext context) {
                         ),
                         InkWell(
                           hoverColor: Colors.green,
-                          child: Icon(FontAwesomeIcons.github),
+                          child: const Icon(FontAwesomeIcons.github),
                           onTap: () {
                             const uri = 'https://www.github.com/jayateertha043';
                             launch_url_newtab(uri);
@@ -146,7 +146,7 @@ dynamic showCustomDrawer(BuildContext context) {
                         ),
                         InkWell(
                           hoverColor: Colors.green,
-                          child: Icon(FontAwesomeIcons.twitter),
+                          child: const Icon(FontAwesomeIcons.twitter),
                           onTap: () {
                             const uri = 'https://www.twitter.com/jayateerthaG';
                             launch_url_newtab(uri);
@@ -157,7 +157,7 @@ dynamic showCustomDrawer(BuildContext context) {
                         ),
                         InkWell(
                           hoverColor: Colors.green,
-                          child: Icon(FontAwesomeIcons.envelope),
+                          child: const Icon(FontAwesomeIcons.envelope),
                           onTap: () {
                             const uri = 'mailto:jayateertha043@gmail.com';
                             launch_url_newtab(uri);
@@ -168,7 +168,7 @@ dynamic showCustomDrawer(BuildContext context) {
                         ),
                         InkWell(
                           hoverColor: Colors.green,
-                          child: Icon(FontAwesomeIcons.phoneAlt),
+                          child: const Icon(FontAwesomeIcons.phoneAlt),
                           onTap: () {
                             const uri = 'tel:+919789098758';
                             launch_url_newtab(uri);
