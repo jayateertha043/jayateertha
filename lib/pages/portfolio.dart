@@ -4,7 +4,7 @@ import 'package:jayateertha/widgets/custom_drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Portfolio extends StatefulWidget {
-  const Portfolio({Key? key}) : super(key: key);
+  const Portfolio({super.key});
 
   @override
   _PortfolioState createState() => _PortfolioState();
@@ -60,6 +60,7 @@ class _PortfolioState extends State<Portfolio> {
         }),
       ),
       body: Wrap(
+        alignment: WrapAlignment.center,
         children: [
           Container(
             height: context.percentHeight * 0.95,
@@ -79,7 +80,6 @@ class _PortfolioState extends State<Portfolio> {
               height: context.percentHeight * 35.5, child: Projects(projects)),
           //: SizedBox(height: context.percentHeight * 35.5),
         ],
-        alignment: WrapAlignment.center,
         // crossAlignment: CrossAxisAlignment.center,
       ),
     );
@@ -89,7 +89,7 @@ class _PortfolioState extends State<Portfolio> {
 class Projects extends StatefulWidget {
   final List<dynamic> projects;
 
-  const Projects(this.projects, {Key? key}) : super(key: key);
+  const Projects(this.projects, {super.key});
   @override
   _ProjectsState createState() => _ProjectsState();
 }
@@ -160,7 +160,7 @@ class _ProjectsState extends State<Projects> {
                               child: Padding(
                                 padding: const EdgeInsets.all(3),
                                 child: Card(
-                                  color: null,
+                                  color: Vx.randomColor,
                                   child: VStack(
                                     [
                                       Container(
@@ -205,7 +205,7 @@ class _ProjectsState extends State<Projects> {
 
 class Achievements extends StatefulWidget {
   final List<dynamic> achievements;
-  const Achievements(this.achievements, {Key? key}) : super(key: key);
+  const Achievements(this.achievements, {super.key});
 
   @override
   _AchievementsState createState() => _AchievementsState();
@@ -241,14 +241,14 @@ class _AchievementsState extends State<Achievements> {
                 // scrollDirection: Axis.horizontal,
                 // controller: _scrollController,
                 //shrinkWrap: true,
-                autoPlayInterval: const Duration(seconds: 2),
+                autoPlayInterval: const Duration(seconds: 3),
                 autoPlay: true,
-                viewportFraction: 0.8,
+                viewportFraction: 0.65,
                 aspectRatio: (3 / 2),
                 enableInfiniteScroll: true,
                 enlargeCenterPage: true,
                 pauseAutoPlayOnTouch: const Duration(seconds: 5),
-                autoPlayCurve: Curves.fastLinearToSlowEaseIn,
+                autoPlayCurve: Curves.fastOutSlowIn,
                 itemBuilder: (context, index) {
                   String title = "";
                   String description = "";
@@ -272,7 +272,7 @@ class _AchievementsState extends State<Achievements> {
                             child: Padding(
                               padding: const EdgeInsets.all(3),
                               child: Card(
-                                color: null,
+                                color: Vx.randomColor,
                                 child: title
                                     .toString()
                                     .text

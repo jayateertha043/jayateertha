@@ -93,12 +93,8 @@ dynamic showCustomDrawer(BuildContext context) {
                           .xl2
                           .makeCentered(),
                       onTap: () {
-                        var uri = Uri.base.scheme +
-                            "://" +
-                            Uri.base.host +
-                            ":" +
-                            Uri.base.port.toString();
-                        uri = uri + "/assets/JayateerthaResume.pdf";
+                        var uri = "${Uri.base.scheme}://${Uri.base.host}:${Uri.base.port}";
+                        uri = "$uri/assets/JayateerthaResume.pdf";
                         // print(uri);
                         launch_url_newtab(uri);
                       },

@@ -4,7 +4,7 @@ import 'package:jayateertha/widgets/custom_drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Blogs extends StatefulWidget {
-  const Blogs({Key? key}) : super(key: key);
+  const Blogs({super.key});
 
   @override
   _BlogsState createState() => _BlogsState();
@@ -57,7 +57,7 @@ class _BlogsState extends State<Blogs> {
 
 class MediumBlogs extends StatefulWidget {
   final List<dynamic> medium_blogs;
-  const MediumBlogs(this.medium_blogs, {Key? key}) : super(key: key);
+  const MediumBlogs(this.medium_blogs, {super.key});
 
   @override
   _MediumBlogsState createState() => _MediumBlogsState();
@@ -119,7 +119,7 @@ class _MediumBlogsState extends State<MediumBlogs> {
                                     //hoverColor: Colors.green,
                                     child: Container(
                                       // elevation: 20,
-                                      //color: null,
+                                      color: Vx.randomColor,
                                       padding: const EdgeInsets.all(20),
                                       child: data[index]["title"]
                                           .toString()

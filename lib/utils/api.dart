@@ -4,9 +4,9 @@ import 'dart:convert';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<List<dynamic>> getGithubProjects() async {
-  const String api_url =
+  const String apiUrl =
       'https://api.github.com/users/jayateertha043/repos?sort=created';
-  Uri uri = Uri.parse(api_url);
+  Uri uri = Uri.parse(apiUrl);
   final res = await http.get(uri);
   var body = const Utf8Decoder().convert(res.bodyBytes);
   var data = json.decode(body);
@@ -24,9 +24,9 @@ Future<List<dynamic>> getGithubProjects() async {
 }
 
 Future<dynamic> getMediumBlogs() async {
-  const String api_url =
+  const String apiUrl =
       'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@jayateerthag?format=json';
-  Uri uri = Uri.parse(api_url);
+  Uri uri = Uri.parse(apiUrl);
   dynamic filtered = [];
   final res = await http.get(uri);
   if (res.statusCode == 200) {
@@ -39,9 +39,9 @@ Future<dynamic> getMediumBlogs() async {
 }
 
 Future<dynamic> getProjectsFromFirebase() async {
-  const String api_url =
+  const String apiUrl =
       'https://jayateertha-df57b-default-rtdb.firebaseio.com/.json';
-  Uri uri = Uri.parse(api_url);
+  Uri uri = Uri.parse(apiUrl);
   dynamic filtered = [];
   final res = await http.get(uri);
   if (res.statusCode == 200) {
@@ -54,9 +54,9 @@ Future<dynamic> getProjectsFromFirebase() async {
 }
 
 Future<dynamic> getAchievementsFromFirebase() async {
-  const String api_url =
+  const String apiUrl =
       'https://jayateertha-df57b-default-rtdb.firebaseio.com/.json';
-  Uri uri = Uri.parse(api_url);
+  Uri uri = Uri.parse(apiUrl);
   dynamic filtered = [];
   final res = await http.get(uri);
   if (res.statusCode == 200) {

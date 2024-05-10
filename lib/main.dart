@@ -33,7 +33,7 @@ const colorizeTextStyle = TextStyle(
     color: Colors.white);
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -80,12 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: VStack(
           [
-            Image.asset("assets/img/avatar.jpg")
-                .card
-                .circular
-                .make()
-                .wh20(context)
-                .centered(),
+            Image.asset(
+              "assets/img/avatar.jpg",
+            ).card.circular.p32.elevation(20).makeCentered().h32(context),
             welcome.richText.xl2.cyan400.bold.makeCentered(),
             const SizedBox(
               height: 10,
